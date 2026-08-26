@@ -1,9 +1,22 @@
 #hexo robots.txt
-User-agent: * 
-#Crawl-delay:100
+# 允许百度、谷歌、必应
+User-agent: Baiduspider
+Allow: /
 
-Allow: /archives/
-Allow: /categorioes/
-Allow: /about/
-Allow:/sitemap/
-Allow:/contact/
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# 禁止所有AI训练爬虫（关键）
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
