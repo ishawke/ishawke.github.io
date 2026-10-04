@@ -57,6 +57,21 @@
 
   
 
+<script>
+	//-------------------------------------------------------------------------------------
+	function switchLang(){
+	  const path = window.location.pathname;
+	  if ( path.startsWith('/zh-CN/') || path === '/zh-CN' ){
+	    //switch zh-CN to EN
+	    const newPath = path.replace(/^\/zh-CN/, ' ') || '/';
+	    window.location.href = newPath;
+	  }else{
+	    //switch EN to zh-CN
+	    window.location.href = '/zh-CN' + (path === '/' ? '/' : path);
+	  }
+	}
+	//---------------------------------------------------------------------------------------
+</script>
 
 <header id="allheader" class="site-header" role="banner" 
    >
@@ -86,7 +101,7 @@
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/zh-CN/"> <a class="" href="/zh-CN/">中文</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="javascript:switchLang();"> <a class="" href="javascript:switchLang();">中文</a> </li>
                     
               </ul>
             </div>
@@ -362,7 +377,7 @@
   
     <a href="/about" class="mobile-nav-link">About</a>
   
-    <a href="/zh-CN/" class="mobile-nav-link">中文</a>
+    <a href="javascript:switchLang();" class="mobile-nav-link">中文</a>
   
 </nav> -->
     <footer id="footer" class="site-footer">
@@ -373,8 +388,8 @@
 	      &copy; 2020-2026 Hawke All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
-              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
-              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+              UV:<span id="busuanzi_value_site_uv"></span> 
+              PV:<span id="busuanzi_value_site_pv"></span>
             </span>
           
       </div>
@@ -461,7 +476,8 @@
 
 
 
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<!-- <script async src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.mini.js"></script>-->
+	<script defer src="https://cn.vercount.one/js"></script>
 	</script>
 
 
